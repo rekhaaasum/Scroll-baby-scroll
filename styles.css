@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.scrolling-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    border: 2px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.message {
+    display: inline-block; /* Display messages in a horizontal line */
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: top; /* Align messages to the top */
+}
+
+.message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
