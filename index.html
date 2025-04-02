@@ -7,15 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scrolling-container">
-        <div class="message">Stay positive!</div>
-        <div class="message">You are amazing!</div>
-        <div class="message">Keep smiling!</div>
-        <div class="message"><img src="Brenden recog.jpg" alt="Positive Image 1"></div>
-        <div class="message"><img src="Ted ian r1.jpg" alt="Positive Image 2"></div>
-        <div class="message"><img src="test rec.jpg" alt="Positive Image 3"></div>
-        <!-- Add more messages or images here -->
+    <div class="scrolling-container" id="scrolling-container">
+        <!-- Images will be injected here by JavaScript -->
     </div>
+
+    <script>
+        const imageCount = 17;
+        const imageContainer = document.getElementById('scrolling-container');
+
+        // Create an array of image filenames
+        let images = Array.from({ length: imageCount }, (_, i) => `image${i + 1}.jpg`);
+
+        // Shuffle the array using Fisher-Yates algorithm
+        for (let i = images.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [images[i], images[j]] = [images[j], images[i]];
+        }
+
+        // Create and append divs with images
+        images.forEach((src, index) => {
+            const div = document.createElement('div');
+            div.className = 'message';
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Positive Image ${index + 1}`;
+            div.appendChild(img);
+            imageContainer.appendChild(div);
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
+
+
 </html>
